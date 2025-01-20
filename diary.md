@@ -11,4 +11,7 @@ Today I finally gave up on the seperate camera. I made the player stationary and
 Today I tried to fix the gravity fuction... no luck.
 
 19/1/25
-Today I gave up on the gravity, so now my game is 3d Topdown. I implemented spider enemies that crawl on the floor (If I fix the gravity they crawl on the wall, very clever) and I made a new hitbox for the player that only activates if he presses "j" on the keyboard, I also drew some sprites. I implemented knockback and leave enemy corpses on the floor
+Today I gave up on the gravity, so now my game is 3d Topdown. I implemented spider enemies that crawl on the floor (If I fix the gravity they crawl on the wall, very clever) and I made a new hitbox for the player that only activates if he presses "j" on the keyboard, I also drew some sprites. I implemented knockback and leave enemy corpse the floor
+
+20/1/25
+Today I fixed the enemys glitching through the floor by making a better gameloop with the help of lucas. Then i made keyObjects and an exit if you have all the keys. Also the player has health now and disappears when he dies. 
