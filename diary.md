@@ -1,13 +1,17 @@
-12/1/25
+13/1/25
+Today I familiarized myself with the base template Lucas provided us, I made a map, that the player could jump around in and made an enemy with the pacman ghost AI.
 
 14/1/25
+Today I tried making the movement triggers of the basetemplate vertical. So that the camera draws the level around diffent axes, it didn't work. Then I started working on making a new camera system based on a Youtube Tutorial, I molded the code from the video into a more overseeable structure like in the base template, because the guy in the video has EVERYTHING in one .js File, yuck!
 
 15/1/25
+Today I gave up on the tutorial video and started all over AGAIN!, this time I am only going to use the camera of a certain other Tutorial video that looks promising. It functions by only drawing the canvas in a certain spot and moving that spots x and y coordinates.
 
 16/1/25
+The camera works today I tried to make the gravity work with said camera, I didn't end up working!
 
 17/1/25
-Today I finally gave up on the seperate camera. I made the player stationary and made the map move around him. Lucas then helped me for two hours to make a new gravity engine.
+Today I finally gave up on the seperate camera. I started all over again and made the player stationary and made the map move around him. Lucas then helped me for two hours to make a new gravity engine.
 
 18/1/25
 Today I tried to fix the gravity fuction... no luck.
