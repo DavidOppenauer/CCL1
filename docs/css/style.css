@@ -1,0 +1,78 @@
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+    background-color: rgb(60, 60, 60);
+}
+
+#canvas {
+    border: 2px solid black;
+    background-color: rgb(38, 36, 36);
+    max-width: 95%;
+    max-height: 95%;
+    display: none;
+}
+
+.start {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.start .startimage {
+    max-width: 100%;
+    height: 1024px;
+}
+
+ .start #startButton {
+    position: absolute;
+    width: 300px;
+    top: 35%;
+    left: 35%;
+    cursor: pointer;
+}
+
+.gameOver {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.gameOver .gameOverImage {
+    max-width: 100%;
+    height: 1024px;
+}
+
+ .gameOver #restartButton {
+    position: absolute;
+    width: 300px;
+    top: 35%;
+    left: 35%;
+    cursor: pointer;
+}
+
+.win {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.win .winImage {
+    max-width: 100%;
+    height: 1024px;
+}
+
+.win #wooHooButton {
+    position: absolute;
+    width: 300px;
+    top: 35%;
+    left: 35%;
+    cursor: pointer;
+}

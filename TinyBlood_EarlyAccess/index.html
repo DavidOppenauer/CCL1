@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tiny Blood</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <link rel="icon" href="favicon.png">
+</head>
+<body>
+   <img>
+    <div class="start">
+      <img class="startimage" src="./images/titleScreen.png" alt="Oh no">
+      <img id="startButton" class="grow" src="./images/startButton.png">
+    </div>
+    <div class="gameOver">
+      <img class="gameOverImage" src="./images/gameOverScreen.png" alt="Oh no">
+      <img id="restartButton" class="grow" src="./images/restartButton.png">
+    </div>
+    <div class="win">
+      <img class="winImage" src="./images/winScreen.png" alt="Oh no">
+      <img id="wooHooButton" class="grow" src="./images/wooHooButton.png">
+    </div>
+  <canvas id="canvas" width="1024" height="1024"></canvas>
+  <div style="display: none;">
+    <img id="BloodSplatterLazy"
+      src="./images/bloodsplatt.png"
+      width="64"
+      height="64"/>
+  </div>
+  <div id="gameOverScreen">
+
+  </div>
+  <div id="endScreen">
+
+  </div>
+    
+
+  <script type="module" src="./scripts/modules/global.js"></script>
+  <script type="module" src="./scripts/modules/input.js"></script>
+  <script type="module" src="./scripts/modules/main.js"></script>
+  
+</body>
+</html>
