@@ -1,8 +1,6 @@
-# 🎮 **Tiny Blood** 
+# 🩸 **Tiny Blood** 🩸
 
-> **Short Pitch**: A brief and catchy description of your game. Highlight the concept, genre, and key features.
-> 
-> *Example:* "Explore an alien planet in this retro-inspired platformer where gravity is your greatest ally—or enemy!"
+> **Short Pitch**: Tiny Blood is a topdown 2d exploration game. Where you have to explore a little cave, fight enemys and collect keys to win the game!
 
 ---
 
@@ -15,7 +13,7 @@
 
 ### Main Gameplay:
 <div style="text-align: center;">
-  <img src="gameplay.png" alt="Gameplay Screenshot" width="600">
+  <img src="TinyBloodMenu.png" alt="Gameplay Screenshot" width="600">
   <p>*Figure 1: Example of gameplay in action.*</p>
 </div>
 
@@ -23,7 +21,7 @@
 
 ### Menu and UI:
 <div style="text-align: center;">
-  <img src="menu.png" alt="Menu UI Screenshot" width="600">
+  <img src="TinyBloodMenu.png" alt="Menu UI Screenshot" width="600">
   <p>*Figure 2: Menu and user interface.*</p>
 </div>
 
