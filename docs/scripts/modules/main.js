@@ -10,10 +10,15 @@ import { HeartObject } from "../gameObjects/playerHeart.js";
 
 
 function gameLoop(totalRunningTime) {
+    console.log(global.KeyObjectCounter)
+    const rawDelta = (totalRunningTime - global.prevTotalRunningTime) / 1000;
+    global.deltaTime = Math.min(rawDelta, 0.05); // clamp to 50 ms max // Time in milliseconds between frames
+    global.prevTotalRunningTime = totalRunningTime;
+    // console.log(global.timeSinceDamageTaken);
     global.timeSinceDamageTaken += global.deltaTime; // This is a counter to make the player only hurtable 2 seconds after beeing hit
-    global.deltaTime = totalRunningTime - global.prevTotalRunningTime; // Time in milliseconds between frames
+    /*global.deltaTime = totalRunningTime - global.prevTotalRunningTime; // Time in milliseconds between frames
     global.deltaTime /= 1000; // Convert milliseconds to seconds for consistency in calculations
-    global.prevTotalRunningTime = totalRunningTime; // Save the current state of "totalRunningTime", so at the next call of gameLoop (== next frame) to calculate deltaTime again for that next frame.
+    global.prevTotalRunningTime = totalRunningTime; // Save the current state of "totalRunningTime", so at the next call of gameLoop (== next frame) to calculate deltaTime again for that next frame.*/
     global.ctx.clearRect(0, 0, global.canvas.width, global.canvas.height); // Completely clear the canvas for the next graphical output 
     for (let phase = 0; phase < 4; phase++) {//phase 0 store positions    phase 1 update objects     phase 2 collision detection positions     phase 3 applyGravity & draw
         for (var i = 0; i < global.allGameObjects.length; i++) { //loop in the (game)loop -> the gameloop is continous anyways.. and on every cylce we do now loop through all objects to execute several operations (functions) on each of them: update, draw, collision detection, ...
@@ -39,8 +44,6 @@ function gameLoop(totalRunningTime) {
 
 function setupGame() {
     global.map = new MapObject(0, 0, 3000, 3000);
-    global.playerObject = new Player(512, 512, 64, 64);
-    global.playerHitbox = new PlayerHitbox (512, 512, 100, 100);
     
     let blockMap = [
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -86,11 +89,18 @@ function setupGame() {
         }
     }
 
+    global.playerObject = new Player(512, 512, 64, 64);
+    global.playerHitbox = new PlayerHitbox (512, 512, 100, 100); 
+
     global.heart_1 = new HeartObject(0, 0, 100, 100);
     global.heart_2 = new HeartObject(100, 0, 100, 100);
     global.heart_3 = new HeartObject(200, 0, 100, 100);
+
+    //Keep enemies from moving early
+    global.prevTotalRunningTime = performance.now();
+    global.deltaTime = 0; 
     
-   requestAnimationFrame(gameLoop);
+    requestAnimationFrame(gameLoop);
 }
 
 //Menu Setup
