@@ -82,10 +82,11 @@ function stop(event) {
         global.playerObject.switchCurrentSprites(0, 0);
         return;
     }
-
+    // Ignore keys we do not care about
     if (!(key in keys)) return;
-
+    // Mark the pressed key as held down
     keys[key] = false;
+    // Recalculate movement + sprite from all currently held keys
     applyMovementFromKeys();
 }
 
