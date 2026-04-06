@@ -8,15 +8,6 @@ class Spider extends BaseGameObject {
     xVelocity = 50;
     yVelocity = 0;
     direction = "";
-    
-    animationData = {
-        "animationSprites": [],
-        "timePerSprite": 0.08,
-        "currentSpriteElapsedTime": 0,
-        "firstSpriteIndex": 0,
-        "lastSpriteIndex": 0,
-        "currentSpriteIndex": 0
-    };
 
     getBoxBounds = function () {
         let bounds = {
@@ -47,15 +38,6 @@ class Spider extends BaseGameObject {
        "movementChangeOppositePossibility": 0.3
     };
 
-    animationData = {
-        "animationSprites": [],
-        "timePerSprite": 0.2,
-        "currentSpriteElapsedTime": 0,
-        "firstSpriteIndex": 0,
-        "lastSpriteIndex": 0,
-        "currentSpriteIndex": 0
-    };
-
     update = function () {
         if (this.enemyAI === true) {
             this.randomMovementData.currentDirectionElapsedTime += global.deltaTime;
@@ -68,14 +50,14 @@ class Spider extends BaseGameObject {
             this.x += this.xVelocity * global.deltaTime;
             this.y += this.yVelocity * global.deltaTime;
             
-            let currentDirection = "";
+            let currentDirection = this.direction;
 
             if (this.xVelocity < 0 && this.yVelocity == 0) {
-                currentDirection = "right";
+                currentDirection = "left";
                 console.log(currentDirection);
             }
             else if (this.xVelocity > 0 && this.yVelocity == 0) {
-                currentDirection = "left";
+                currentDirection = "right";
                 console.log(currentDirection);
             }
             else if (this.xVelocity == 0 && this.yVelocity < 0) {
@@ -86,29 +68,24 @@ class Spider extends BaseGameObject {
                 currentDirection = "down";
                 console.log(currentDirection);
             }
-            
-            switch(currentDirection) {
+            if (currentDirection !== this.direction) {
+                this.direction = currentDirection;
+                switch(currentDirection) {
 
-                case "right":
-                    this.switchCurrentSprites(8, 11);
-                    break;
-                case "left":
-                    this.switchCurrentSprites(12, 15);
-                    break;
-                case "up":
-                    this.switchCurrentSprites(4, 7);
-                    break;
-                case "down":   
-                    this.switchCurrentSprites(0, 3);
-                    break;
+                    case "right":
+                        this.switchCurrentSprites(8, 11);
+                        break;
+                    case "left":
+                        this.switchCurrentSprites(12, 15);
+                        break;
+                    case "up":
+                        this.switchCurrentSprites(4, 7);
+                        break;
+                    case "down":   
+                        this.switchCurrentSprites(0, 3);
+                        break;
+                }
             }
-
-            //depending on the velocity set the variable currentDirection
-            //if currentDirection is different from this.direction then set the animation according to the new direction
-            // e.g.         this.switchCurrentSprites(0, 3); when it walks down 
-            // and additionally (still if currentCirection is differentFrom this.direction... so the same if statement) set this.direction = currentDirection
-
-            // console.log("enemy should move")
         }
     }
 
